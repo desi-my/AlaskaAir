@@ -1,0 +1,349 @@
+/*
+
+Mobile First - Daisy Yovcheva
+Alaska Airlines Mobile App 
+Alaska Colors:
+00406a - dark blue
+0e7bb6 - mid blue
+46a6c7 - light blue
+b2d889 - green 
+*/
+
+
+html, body {
+	background-color: #fff;
+	font-family: 'Open Sans', 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #EBEBD3;
+}
+
+h1 {
+	font-size: 1.6em;
+}
+h2 {
+	font-size: 1.4em;
+}
+
+h3 {
+	font-size: 1.1em;
+}
+
+h4 {
+	font-size: .8em;
+}
+
+.container {
+	width: 95%;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+header {
+	background-color: #0e7bb6;     
+	color: #EBEBD3;
+	padding: 1em 0;
+	position: relative;
+}
+
+header::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+
+.logo {
+	float: left;
+	font-size: 1rem;
+	margin: 0;
+	font-weight: 700;
+}
+
+.site-nav {
+	position: absolute;
+	margin-top: 135px;
+	left:0;
+	width: 100%;
+	background-color: #46a6c7;
+	height: 0;
+	overflow-x: hidden;
+	transform: translateX(-500px);
+	transition: all 200ms ease-in-out;
+}
+
+
+.site-nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-nav li {
+	border-bottom: 1px solid rgba(240,248,234,.1);
+}
+
+.site-nav li.list-one::before {
+	content: "\f054";
+	font-family: "FontAwesome";
+	float: right;
+	background-color: rgba(21,124,180, .15);
+	padding: 26.5px;
+	position: relative;
+	top:0;
+	color: #EBEBD3;
+	cursor: pointer;   
+}
+
+.site-nav .menu-item.close::before {
+	content: "\f00d";
+	font-family: "FontAwesome";
+	float: right;
+	padding: 26.5px;
+	position: relative;
+	top:0;
+	color: #EBEBD3;
+	cursor: pointer; 
+	font-size: 1.3em;  
+}
+
+.menu-item.close {
+	background-color: #73b9d2;
+	cursor: default;
+}
+.menu-item.close a:hover {
+	background-color: transparent;
+	color: #EBEBD3;
+}
+
+.fa.flex {
+	float: right;
+	margin-right: 30px;
+}
+
+.site-nav li:last-child; {
+	border-bottom: none;
+}
+
+.site-nav a {
+	color: #EBEBD3;
+	display: block;
+	padding: 2em 0 2em 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: .8em;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+	background-color: rgba(21, 124, 180, .6);
+	color: #F0F8EA;
+}
+
+.site-nav--open {
+	height: auto;
+	transform: translateX(0);
+}
+
+.site-nav--icon {
+	display: inline-block;
+	position: relative;
+	font-size: 1.9em;
+	margin-right: 2em;
+	margin-left: .1em;
+	width: 1.1em;
+	text-align: right;
+	color: rgba(255,255,255, .55);
+}
+
+.site-nav li.second a{
+	padding-left: 40px;
+}
+
+.sub-menu {
+	display: none;
+	background-color: #4ea9c9;  
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+	width: 90%;
+	height: 100%;
+	overflow-x: hidden;
+    /*transform: translateX(10px);
+    transition: all 900ms ease-in-out;*/
+    border-left: .2em solid #EBEBD3;
+
+
+  /*  -webkit-animation-duration: 520ms;
+            animation-duration: 500ms;
+            animation: slidein 1s linear;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;*/
+
+        }
+
+        @-webkit-keyframes fadeInRight {
+        	0% {
+        		
+        		-webkit-transform: translateX(-800px);
+        		transition: all 200ms ease-out;
+        		
+        	}
+        	100% {
+        		
+        		-webkit-transform: translateX(10px);
+        		transition: all 600ms ease-out;
+        		
+        	}
+        }
+        
+        @keyframes fadeInRight {
+        	0% {
+        		
+        		transform: translateX(-800px);
+        		transition: all 200ms ease-out;
+        		
+        	}
+        	100% {
+        		
+        		transform: translateX(10px);
+        		transition: all 600ms ease-out;
+        		
+        	}
+        }
+        
+        .fadeInRight {
+        	-webkit-animation-name: fadeInRight;
+        	animation-name: fadeInRight;
+        } 
+
+
+        .sub-sub-menu {
+        	display: none;
+        	background-color: #59adca;
+        }
+
+        .sub-sub-menu .menu-item.third a {
+        	padding-left: 60px;
+        }
+
+
+
+        /*--------Menu Toggle -----------*/ 
+
+
+        .menu-toggle {
+        	padding: 1em;
+        	position: absolute;
+        	top: .5em;
+        	right: .5em;
+        	cursor: pointer;
+        }
+
+        .hamburger,
+        .hamburger::before,
+        .hamburger::after {
+        	content: '';
+        	display: block;
+        	background-color: #EBEBD3;
+        	height: 3px;
+        	width: 1.75em;
+        	border-radius: 3px;
+        	transition: all ease-in-out 500ms;
+        }
+
+        .hamburger::before {
+        	transform: translateY(-6px);
+        }
+
+        .hamburger::after {
+        	transform: translateY(3px);
+        }
+
+        .open .hamburger {
+        	transform: rotate(45deg);
+        }
+
+        .open .hamburger::before {
+        	opacity: 0;
+        }
+
+        .open .hamburger::after {
+        	transform: translateY(-2px) rotate(-91deg);
+        }
+
+
+        /*------ Sections --------*/
+
+        .breadcrumbs .bread{
+        	background-color: #00406a;
+        	position: relative;
+        	margin-top: 0;
+        	padding: 5px 3px 5px 10px;
+        	color: #EBEBD3;
+        }
+
+        .bread-hide {
+        	display: none;
+        }
+
+        .intro{
+        	background: url(../img/sky.jpg) no-repeat center center fixed;
+        	background-size: cover;
+        	padding: 2px 0px 36px 10px;
+        	background-color: blue;
+        	-webkit-background-size: cover;
+        	-moz-background-size: cover;
+        	-o-background-size: cover;
+        	
+        	-webkit-animation-duration: 500ms;
+        	animation-duration: 500ms;
+        	-webkit-animation-fill-mode: both;
+        	animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeInLeft {
+        	0% {
+        		opacity: 0;
+        		-webkit-transform: translateX(-10px);
+        	}
+        	100% {
+        		opacity: 1;
+        		-webkit-transform: translateX(0);
+        	}
+        }
+        
+        @keyframes fadeInLeft {
+        	0% {
+        		opacity: 0;
+        		transform: translateX(-10px);
+        	}
+        	100% {
+        		opacity: 1;
+        		transform: translateX(0);
+        	}
+        }
+        
+        .fadeInLeft {
+        	-webkit-animation-name: fadeInLeft;
+        	animation-name: fadeInLeft;
+        } 
+        
+
+
+        /* Next Breaking point - Very based on project */
+
+        @media only screen and (min-width : 640px) {
+
+        	.menu-toggle, .sub-menu, .sub-sub-menu, .site-nav {
+        		display: none;
+        	}
+
+
+        }
+
+
+
+
+
